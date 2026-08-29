@@ -8,19 +8,25 @@
 - 本机播放需要 `mpv`（需要在 `PATH` 中可执行）；小爱音箱播放不依赖 `mpv`
 - 支持有声书 API 的 Talebook 服务端
 
-从 Talebook 仓库安装：
+从独立仓库安装：
 
 ```bash
-python3 -m pip install ./packages/talebook-audio-cli
+git clone https://github.com/hehetoshang/talebook-audio-cli.git
+cd talebook-audio-cli
+python3 -m pip install .
 talebook-audio --help
 ```
 
 开发安装与测试：
 
 ```bash
-python3 -m pip install -e './packages/talebook-audio-cli[test]'
-python3 -m pytest packages/talebook-audio-cli/tests
+python3 -m pip install -e '.[test]'
+python3 -m pytest
 ```
+
+Talebook 主仓库通过 `packages/talebook-audio-cli` 子模块锁定已验证版本。克隆 Talebook 时使用
+`git clone --recurse-submodules`；已有工作树运行
+`git submodule update --init packages/talebook-audio-cli`。
 
 ## 配置与登录
 
