@@ -1,5 +1,9 @@
 # Talebook Audio CLI
 
+[![PyPI Version](https://img.shields.io/pypi/v/talebook-audio-cli.svg)](https://pypi.org/project/talebook-audio-cli/)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776ab?logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/pypi/l/talebook-audio-cli.svg)](https://pypi.org/project/talebook-audio-cli/)
+
 `talebook-audio` 是一个独立安装的 Talebook 有声书终端客户端。它使用 Talebook 自带的账号密码登录接口，列出当前账号可访问的已发布有声书，并可通过本机 `mpv` 或 OpenXiaoAI Bridge 在小爱音箱上播放章节。
 
 ## 依赖与安装
@@ -8,13 +12,19 @@
 - 本机播放需要 `mpv`（需要在 `PATH` 中可执行）；小爱音箱播放不依赖 `mpv`
 - 支持有声书 API 的 Talebook 服务端
 
-从独立仓库安装：
+从 PyPI 安装（推荐）：
+
+```bash
+python3 -m pip install talebook-audio-cli
+talebook-audio --help
+```
+
+从源码安装（可选）：
 
 ```bash
 git clone https://github.com/hehetoshang/talebook-audio-cli.git
 cd talebook-audio-cli
 python3 -m pip install .
-talebook-audio --help
 ```
 
 开发安装与测试：
